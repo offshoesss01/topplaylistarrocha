@@ -1,0 +1,110 @@
+/* Estilos Globais */
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: white; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Garante que o conteúdo comece do topo */
+    min-height: 100vh;
+}
+
+/* Título fixo no topo */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    background-color: #28a745; /* Cor de fundo verde */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: fixed; /* Fixa o título no topo */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Garante que o título fique sobre os outros elementos */
+}
+
+/* Texto de descrição abaixo do título */
+p {
+    color: #bbb;
+    font-size: 1.1rem;
+    margin-top: 100px; /* Cria um espaçamento maior para não sobrepor o título */
+    margin-bottom: 30px;
+}
+
+/* Container de playlists */
+.playlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+    padding: 10px; /* Reduzir o padding para puxar as playlists mais para a esquerda */
+    width: 100%;
+    max-width: 1200px; /* Limite máximo para a largura */
+    margin-top: 60px; /* Ajusta o espaçamento para subir mais as playlists */
+    margin-left: 20px; /* Puxa um pouco mais para a esquerda */
+}
+
+/* Estilo de cada card */
+.playlist-card {
+    background-color: #1d1d1d; /* Fundo escuro do card */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para o card */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ajusta a posição do conteúdo dentro do card */
+    height: 200px; /* Define uma altura mínima para o card */
+}
+
+/* Título da playlist */
+.playlist-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Distância entre o título e a descrição */
+    color: #fff;
+    margin-top: 15px; /* Distância adicional entre o título e o topo do card */
+}
+
+/* Descrição da playlist */
+.playlist-card p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Ajuste para subir a descrição mais perto do título */
+}
+
+/* Botão de ouvir */
+.play-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #28a745; /* Cor verde */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.play-button:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* Efeito de animação no card quando o mouse passa por cima */
+.playlist-card:hover {
+    transform: translateY(-10px); /* O card sobe um pouco */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7); /* Sombra mais forte no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .playlist-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
