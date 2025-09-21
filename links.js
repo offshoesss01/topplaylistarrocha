@@ -14,12 +14,10 @@ const playlists = [
 	description: "Aqui só tem música pra cantar alto, beber uma gelada e lembrar daquela pessoa que não sai da cabeça. Do forrózinho ao arrocha, é só pressão do jeitinho que o povão gosta!", // Descrição da playlist
     link: "https://open.spotify.com/playlist/4JQAAAUKPF6fBVmLP7Knyq"
   },
-    },
     {
     title: "🔥 Bar do Sofrimento – Seresta & Vaquejada Sem Freio 🍻💔",
 	description: "Só música pra cantar gritando, beber até esquecer o ex e sofrer junto com o vaqueiro. Aqui o paredão treme e o coração aperta, do jeitinho que o povão gosta!", // Descrição da playlist
     link: "https://open.spotify.com/playlist/5SK55IVlSfiEy8r1DfWFxg"
-  },
   },
     },
     {
@@ -164,3 +162,4 @@ const playlists = [
   },
   // Continue a adicionar mais playlists aqui
 ];
+
