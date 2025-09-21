@@ -156,9 +156,23 @@ p.description {
         font-size: 1.5rem;
         padding: 15px;
     }
+    
+    .ler-mais {
+    color: #28a745;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.description-text.expanded {
+    max-height: 150px;
+    overflow-y: auto;
+    -webkit-line-clamp: unset;
+}
 
     p.description {
         font-size: 1rem;
         margin-top: 80px;
     }
 }
+
