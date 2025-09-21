@@ -1,81 +1,134 @@
-/* Estilo geral */
+/* Estilos Globais */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
-  margin: 0;
-  padding: 0;
+    background-color: #121212; /* Fundo escuro */
+    color: white; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Garante que o conteúdo comece do topo */
+    min-height: 100vh;
 }
 
-/* Container principal */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+/* Título fixo no topo */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    background-color: #28a745; /* Cor de fundo verde */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: fixed; /* Fixa o título no topo */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Garante que o título fique sobre os outros elementos */
 }
 
-/* Card da playlist */
+/* Texto de descrição abaixo do título */
+p {
+    color: #bbb;
+    font-size: 1.1rem;
+    margin-top: 100px; /* Cria um espaçamento maior para não sobrepor o título */
+    margin-bottom: 30px;
+}
+
+/* Container de playlists */
+.playlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+/* Estilo de cada card */
 .playlist-card {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.playlist-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* Altura maior para caber descrição + botão */
+    overflow: hidden;
 }
 
 /* Título da playlist */
 .playlist-card h3 {
-  margin: 0 0 6px 0; /* espaço reduzido entre título e descrição */
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+    margin-top: 10px;
 }
 
 /* Descrição da playlist */
-.playlist-description p {
-  margin: 0; /* remove espaçamento extra */
-  font-size: 0.9rem;
-  color: #bbb;
-  text-align: center;
+.playlist-desc {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 10px;
+    max-height: 60px; /* mostra só o início */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease;
 }
 
-/* Botão */
-.btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #1db954;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+/* Quando expandir */
+.playlist-desc.expanded {
+    max-height: 150px; /* libera mais espaço */
+    overflow-y: auto;  /* ativa scroll se for muito longo */
+    padding-right: 5px; /* espaço p/ scrollbar */
 }
 
-.btn:hover {
-  background-color: #17a44a;
-  transform: scale(1.05);
+/* Botão Ler mais */
+.read-more {
+    color: #28a745;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
-/* Link de expansão da descrição */
-.toggle-description {
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: #1db954;
-  cursor: pointer;
-  text-decoration: none;
+.read-more:hover {
+    text-decoration: underline;
 }
 
-.toggle-description:hover {
-  text-decoration: underline;
+/* Botão de ouvir */
+.play-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.play-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Efeito hover no card */
+.playlist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .playlist-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
