@@ -42,72 +42,48 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
     gap: 20px;
-    padding: 10px;
+    padding: 10px; /* Reduzir o padding para puxar as playlists mais para a esquerda */
     width: 100%;
-    max-width: 1200px;
-    margin-top: 60px;
-    margin-left: 20px;
+    max-width: 1200px; /* Limite máximo para a largura */
+    margin-top: 60px; /* Ajusta o espaçamento para subir mais as playlists */
+    margin-left: 20px; /* Puxa um pouco mais para a esquerda */
 }
 
 /* Estilo de cada card */
 .playlist-card {
-    background-color: #1d1d1d;
+    background-color: #1d1d1d; /* Fundo escuro do card */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para o card */
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 250px; /* Altura maior para caber descrição + botão */
-    overflow: hidden;
+    justify-content: space-between; /* Ajusta a posição do conteúdo dentro do card */
+    height: 200px; /* Define uma altura mínima para o card */
 }
 
 /* Título da playlist */
 .playlist-card h3 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Distância entre o título e a descrição */
     color: #fff;
-    margin-top: 10px;
+    margin-top: 15px; /* Distância adicional entre o título e o topo do card */
 }
 
 /* Descrição da playlist */
-.playlist-desc {
+.playlist-card p {
     font-size: 0.9rem;
     color: #bbb;
-    margin-bottom: 10px;
-    max-height: 60px; /* mostra só o início */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: max-height 0.3s ease;
-}
-
-/* Quando expandir */
-.playlist-desc.expanded {
-    max-height: 150px; /* libera mais espaço */
-    overflow-y: auto;  /* ativa scroll se for muito longo */
-    padding-right: 5px; /* espaço p/ scrollbar */
-}
-
-/* Botão Ler mais */
-.read-more {
-    color: #28a745;
-    cursor: pointer;
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.read-more:hover {
-    text-decoration: underline;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Ajuste para subir a descrição mais perto do título */
 }
 
 /* Botão de ouvir */
 .play-button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #28a745;
+    background-color: #28a745; /* Cor verde */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -116,14 +92,14 @@ p {
 }
 
 .play-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
+    background-color: #218838; /* Verde mais escuro no hover */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
 }
 
-/* Efeito hover no card */
+/* Efeito de animação no card quando o mouse passa por cima */
 .playlist-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-10px); /* O card sobe um pouco */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7); /* Sombra mais forte no hover */
 }
 
 /* Responsividade */
@@ -131,4 +107,37 @@ p {
     .playlist-container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+	
+/* Descrição limitada */
+.playlist-description {
+  position: relative;
+  max-height: 60px;  /* mostra só um pedacinho */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.playlist-description p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.playlist-description p.expanded {
+  max-height: none; /* expande totalmente */
+  overflow: visible;
+}
+
+.toggle-button {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #28a745;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
+
 }
