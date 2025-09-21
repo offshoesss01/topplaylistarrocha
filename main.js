@@ -31,11 +31,9 @@ playlistContainer.addEventListener("click", (event) => {
         const playlist = playlists.find(pl => pl.title === title);
 
         if (p.classList.contains("expanded")) {
-            // Contrair
             p.innerHTML = playlist.description.substring(0, 200) + '<span class="ler-mais"> Ler mais</span>';
             p.classList.remove("expanded");
         } else {
-            // Expandir
             p.innerHTML = playlist.description + '<span class="ler-mais"> Ler menos</span>';
             p.classList.add("expanded");
         }
