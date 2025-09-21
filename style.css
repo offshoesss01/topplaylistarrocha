@@ -83,12 +83,6 @@ p {
     text-overflow: ellipsis;
 }
 
-.playlist-desc {
-    max-height: 80px;
-    overflow-y: auto; /* barra de rolagem sempre que passar */
-    padding-right: 5px; /* espaço p/ scrollbar não cortar texto */
-}
-
 /* Botão "Ler mais" */
 .read-more {
     color: #1db954;
@@ -127,4 +121,5 @@ p {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
+
 
