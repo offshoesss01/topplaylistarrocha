@@ -8,6 +8,7 @@ playlists.forEach((playlist) => {
     const description = playlist.description || "Sem descrição disponível";
     const isLong = description.length > maxLength;
 
+    // Criação da descrição curta com o botão "Ler mais"
     const shortDesc = isLong
         ? `${description.substring(0, maxLength)}<span class="ler-mais"> Ler mais</span>`
         : description;
@@ -25,16 +26,17 @@ playlists.forEach((playlist) => {
 playlistContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("ler-mais")) {
         const span = event.target;
-        const p = span.parentElement;
+        const p = span.parentElement;  // Pega o parágrafo onde o "Ler mais" está
         const card = span.closest(".playlist-card");
-        const title = card.querySelector("h3").textContent;
-        const playlist = playlists.find(pl => pl.title === title);
+        const title = card.querySelector("h3").textContent; // Título do card
+        const playlist = playlists.find(pl => pl.title === title); // Encontra a playlist correspondente
 
+        // Alterna entre "Ler mais" e "Ler menos"
         if (p.classList.contains("expanded")) {
-            p.innerHTML = playlist.description.substring(0, 200) + '<span class="ler-mais"> Ler mais</span>';
+            p.innerHTML = `${playlist.description.substring(0, 200)}<span class="ler-mais"> Ler mais</span>`;
             p.classList.remove("expanded");
         } else {
-            p.innerHTML = playlist.description + '<span class="ler-mais"> Ler menos</span>';
+            p.innerHTML = `${playlist.description}<span class="ler-mais"> Ler menos</span>`;
             p.classList.add("expanded");
         }
     }

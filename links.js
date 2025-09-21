@@ -159,6 +159,107 @@ const playlists = [
 	description: "Playlist que combina aquele coração quebrado com o melhor do arrocha. Sinta a dor, mas sem parar de dançar!", // Descrição da playlist
     "link": "https://open.spotify.com/playlist/2EEPLPBYMrDTN15jv4nasM"
   },
+  {
+    title: "🎧 Rolê de Forró e Sofrência – Sente a Batida e o Coração Partido 💃💔",
+	description: "Prepare-se para dançar e chorar ao som do melhor do forró e da sofrência! Uma playlist perfeita para quem ama cantar até perder a voz e relembrar os momentos de dor e diversão. Desde o vaqueiro apaixonado até a sofrência mais intensa. Aperta o play e se joga!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/5QHIcc3AiKWqZX17Wol1LJ"
+  },
+  {
+    title: "Sofrendo e Se Divertindo – Músicas para o Coração Partido 🎉💔",
+	description: "Uma seleção de músicas que misturam o sabor da dor com a diversão de curtir a vida. Perfeita para quem quer dançar e chorar ao mesmo tempo, entre uma dorzinha e outra no coração. Aperte o play e sinta as emoções à flor da pele!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/4kznUM6zXa5zjwbWFq7rUJ"
+  },
+  {
+    title: "Coração Partido e Forró – Dancinha do Sofrimento 💔🎶",
+	description: "Para quem não consegue decidir entre curtir o forró e viver as dores de um coração partido. Uma playlist que mistura o melhor dos dois mundos: a tristeza que arrebenta e a batida que não deixa de te fazer dançar. Só vem sentir e sofrer ao som do forró!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/2T5wZmQl3dwvyPwDp3w1wY"
+  },
+  {
+    title: "Forró, Coração e Fuga – A Playlist do Amor que Não Dá Certo 💔🎵",
+	description: "Se o amor te deixou pra trás e o forró tomou conta do coração, essa playlist é pra você. Um mix de batidas envolventes e letras de dor, onde cada música vai te fazer sentir o lamento, mas também a vontade de dançar. É hora de deixar o coração se perder no ritmo!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0XeZwx7rcv7gdttHmjso31"
+  },
+  {
+    title: "Arrocha do Sofrimento e Alegria – Hits para Dançar e Chorar 🎶💔",
+	description: "A mistura perfeita de dor e diversão! Aqui você encontra os maiores sucessos do arrocha para chorar a vontade e dançar até cansar. Ideal para quem quer reviver as emoções e se jogar no ritmo. Sente a saudade, mas não deixa de curtir!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/1Hm2VMxnW9Opx7hyt5Cz61"
+  },
+  {
+    title: "Chorando e Dançando – A mistura do Vaqueiro 💃💔",
+	description: "Para quem quer viver a montanha-russa das emoções, essa playlist traz o melhor do arrocha para você chorar e dançar, tudo ao mesmo tempo! Embarque nessa e reviva o drama com alegria.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/3m5AE5eY1kQMJ5VpZHRXPS"
+  },
+  {
+    title: "Sofrência na Veia – Só os Melhores Hits 🎤💔",
+	description: "Quem disse que a dor não pode ser boa? Sinta o sofrimento, mas sem deixar de curtir os sucessos que vão fazer você bater o pé e chorar.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/49X7xYOSebvJQpZ2fDghPp"
+  },
+  {
+    title: "Vaqueiro Sofredor – Coração Partido, Mas Com Estilo 💔🤠",
+	description: "Sofrer nunca foi tão divertido! Ouça os hits mais arrepiantes do arrocha, ideais para quem ama sofrer dançando e cantarolando.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/1uDqPCZpIUli6JtbR3LGqI"
+  },
+  {
+    title: "Choro e Festa – Só No Arrocha 🎉💔",
+	description: "A mistura perfeita de sofrência com animação! Deixe-se levar pela música enquanto a saudade bate forte, mas o ritmo nunca deixa de te fazer mexer.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/6qPSAHGJxYSq8u5Mq9V8LO"
+  },
+  {
+    title: "Tocando o Coração – As Melhores do Arrocha 🎵💔",
+	description: "Para quem sente e também se joga no dance. Aqui, a sofrência vai embalar seu dia, mas você não vai resistir a dançar com o ritmo contagiante do arrocha.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/5zS0kHZteI5s8Mj3fZZoKm"
+  },
+  {
+    title: "Coração Partido, Mas o Corpo Em Movimento 💔💃",
+	description: "A playlist para quem está com o coração partido, mas a vontade de dançar é maior. Com cada batida, a dor se torna diversão!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/6axmtCssSzIiBHtTRYIaVe"
+  },
+  {
+    title: "De Dor Em Dor – Arrocha de Verdade 🎶💔",
+	description: "A playlist que entende sua dor e faz você querer dançar mesmo assim. Prepare-se para sofrer no ritmo certo!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0wAF5v3oN9R5hx3as9pOIX"
+  },
+  {
+    title: "Coração Arrebatado – Arrocha Para Sofrer e Se Divertir 💔🎉",
+	description: "Entre no clima do arrocha com o coração partido, mas com os pés na pista! A sofrência é garantida, e a diversão também.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/6Pn3Z2e9tnmB4v3VJRH8x8"
+  },
+  {
+    title: "Sofrendo com Estilo – Hits de Arrocha Que Arrasam 💃💔",
+	description: "Você vai sentir a dor, mas vai dançar como nunca! Sinta a sofrência enquanto curte os maiores sucessos do arrocha.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0SBg3SFO3TLqxQI3isCbQf"
+  },
+  {
+    title: "Festa na Sofrência – Arrocha Que Pega No Coração 🎶💔",
+	description: "Deixe-se levar pela sofrência e pela festa! Cada batida vai mexer com o seu coração enquanto você não consegue parar de dançar. A dor virou diversão!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/72rzcmxk3Hq4xYKUByyGuN"
+  },
+  {
+    title: "Saudade Que Balança – Arrocha Para Sofrer e Dançar 💔💃",
+	description: "Aqui a saudade é sentida no coração, mas a diversão é sentida no corpo! Sinta a dor e se perca no ritmo, porque a festa nunca acaba.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/2xCM43kXThNjmSnpYUQGCo"
+  },
+  {
+    title: "Arrocha na Veia – Choro e Dança Sem Fim 🎤💔",
+	description: "Quando a saudade apertar, a música vai ajudar! Hits de arrocha para chorar e se soltar ao mesmo tempo. Dance enquanto o coração dói!", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0LbPb4SzItQF4gHQmNu9dD"
+  },
+  {
+    title: "Recaída de Arrocha – Só No Sofrimento e Ritmo 💔🎶",
+	description: "Para os corações que ainda não se recuperaram da dor. A playlist que traz as melhores músicas para quem ama sofrer e dançar ao mesmo tempo.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0NUwO8jOIFIRHj4CIb2DSb"
+  },
+  {
+    title: "Sofrendo com Estilo – O Melhor do Arrocha 🎉💔",
+	description: "Não há tristeza que resista ao ritmo! Sinta cada batida do arrocha enquanto a dor se mistura com a diversão. A playlist para quem ama viver o drama com estilo.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/0FfG4O3TZ1qqc7V2eobG1J"
+  },
+  {
+    title: "Chora, Mas Não Para – Arrocha de Paredão 💔🎉",
+	description: "Vai sentir a dor, mas não vai deixar de se jogar no ritmo! Só as melhores músicas de arrocha para quem ama sofrer e dançar até o amanhecer.", // Descrição da playlist
+    "link": "https://open.spotify.com/playlist/2C6DQy0EkWgF1e8fvCdGOl"
+  },
+
   // Continue a adicionar mais playlists aqui
 ];
 
