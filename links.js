@@ -4,7 +4,7 @@ const playlists = [
 	description: "Sente a dor de um amor perdido com a batida do arrocha. Esse é o lugar dos sentimentos à flor da pele!", // Descrição da playlist
     link: "https://open.spotify.com/playlist/4M0cJkUj7sfUx5T9D6XmkB"
   },
-  {
+    {
     title: "💔 Arrocha do Sofrimento 🎶",
 	description: "Vai sentir a dor na pele e o ritmo no coração. Só quem tem o coração partido vai entender!", // Descrição da playlist
     link: "https://open.spotify.com/playlist/4M0cJkUj7sfUx5T9D6XmkB"
@@ -19,7 +19,6 @@ const playlists = [
 	description: "Só música pra cantar gritando, beber até esquecer o ex e sofrer junto com o vaqueiro. Aqui o paredão treme e o coração aperta, do jeitinho que o povão gosta!", // Descrição da playlist
     link: "https://open.spotify.com/playlist/5SK55IVlSfiEy8r1DfWFxg"
   },
-    },
     {
     title: "🐂💔 Vaqueiro Sofrido – Forró & Seresta do Povão 🍻🎶",
 	description: "Só as brabas pra vaqueiro apaixonado: modão pra doer no peito, seresta de mesa de bar e forró pra lembrar (ou esquecer) do amor. Aqui é sofrência raiz, do jeito que o povão gosta!", // Descrição da playlist
@@ -162,4 +161,5 @@ const playlists = [
   },
   // Continue a adicionar mais playlists aqui
 ];
+
 
