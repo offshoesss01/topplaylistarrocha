@@ -1,14 +1,14 @@
 /* Estilos Globais */
 body {
-    background-color: #121212; /* Fundo escuro */
-    color: white; /* Texto branco */
-    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Conteúdo começa do topo */
+    justify-content: flex-start;
     min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@ body {
 h1 {
     font-size: 2rem;
     color: #fff;
-    background-color: #28a745; /* Verde */
+    background-color: #28a745;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -33,7 +33,7 @@ h1 {
 p.description {
     color: #bbb;
     font-size: 1.1rem;
-    margin-top: 100px; /* Espaço para não sobrepor o título fixo */
+    margin-top: 100px;
     margin-bottom: 30px;
     max-width: 800px;
     text-align: center;
@@ -48,7 +48,7 @@ p.description {
     padding: 10px 20px;
     width: 100%;
     max-width: 1200px;
-    margin-top: 20px; /* Espaço abaixo da descrição */
+    margin-top: 20px;
     box-sizing: border-box;
 }
 
@@ -63,7 +63,7 @@ p.description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 260px; /* Altura suficiente para título, descrição, botão e ler mais */
+    height: 260px;
 }
 
 /* Título do card */
@@ -82,32 +82,34 @@ p.description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limita a 4 linhas */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     transition: max-height 0.3s ease;
+    position: relative;
 }
 
-/* Quando expandido, mostra todo o texto com scroll */
+/* Texto expandido */
 .playlist-card p.expanded {
-    max-height: 150px; /* altura fixa com rolagem */
+    max-height: 150px;
     overflow-y: auto;
     -webkit-line-clamp: unset;
 }
 
-/* Botão Ler Mais */
-.read-more-btn {
-    background: none;
-    border: none;
+/* "Ler mais" embutido dentro do parágrafo */
+.playlist-card p .ler-mais {
     color: #28a745;
     cursor: pointer;
-    font-size: 1rem;
-    margin-bottom: 10px;
     text-decoration: underline;
-    align-self: center;
-    padding: 0;
+    margin-left: 5px;
+    display: inline;
 }
 
-/* Botão de ouvir */
+/* Hover no "Ler mais" */
+.playlist-card p .ler-mais:hover {
+    color: #1e7e34;
+}
+
+/* Botão "Ouvir Agora" */
 .play-button {
     display: inline-block;
     padding: 12px 25px;
@@ -134,15 +136,20 @@ p.description {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
 }
 
+/* Remover botão antigo "Ler Mais" se ainda existir */
+.read-more-btn {
+    display: none;
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .playlist-container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 10px 15px;
     }
-    
+
     .playlist-card {
-        height: auto; /* Altura flexível em telas pequenas */
+        height: auto;
     }
 
     h1 {
