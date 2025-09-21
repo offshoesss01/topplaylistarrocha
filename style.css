@@ -44,8 +44,8 @@ p.description {
 .playlist-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 10px 20px;
+    gap: 30px; /* Aumentado espaçamento entre cards */
+    padding: 20px;
     width: 100%;
     max-width: 1200px;
     margin-top: 20px; /* Espaço abaixo da descrição */
@@ -63,7 +63,8 @@ p.description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 220px; /* Altura suficiente para título, descrição e botão */
+    /* Removida altura fixa */
+    min-height: 220px; /* Altura mínima para manter tamanho consistente */
 }
 
 /* Título do card */
@@ -79,11 +80,11 @@ p.description {
     color: #bbb;
     margin: 0 0 20px 0;
     flex-grow: 1; /* Para ocupar espaço e empurrar botão para baixo */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limita a 4 linhas */
-    -webkit-box-orient: vertical;
+    overflow: visible; /* Para evitar corte de texto */
+    text-overflow: unset;
+    display: block; /* Removido clamp para mostrar todo texto */
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
 }
 
 /* Botão de ouvir */
@@ -118,10 +119,12 @@ p.description {
     .playlist-container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 10px 15px;
+        gap: 20px;
     }
     
     .playlist-card {
         height: auto; /* Altura flexível em telas pequenas */
+        min-height: auto;
     }
 
     h1 {
