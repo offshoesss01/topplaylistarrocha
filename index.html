@@ -1,65 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trend Music🎶</title>
-    <link rel="stylesheet" href="style.css" /> <!-- Verifique se o caminho do CSS está correto -->
-</head>
-<body>
-    <h1>🔥Top Playlist De Arrocha Do Brasil🎶</h1>
-    <p class="description">Clique e Ouça AGORA!</p>
+const playlistContainer = document.getElementById("playlist-container");
 
-    <div class="playlist-container" id="playlist-container">
-        <!-- Cards de playlists serão gerados aqui pelo JavaScript -->
-    </div>
+playlists.forEach((playlist) => {
+    const card = document.createElement("div");
+    card.classList.add("playlist-card");
 
-    <script src="links.js"></script> <!-- Arquivo onde você vai colocar os links das playlists -->
+    const maxLength = 200;
+    const description = playlist.description || "Sem descrição disponível";
+    const isLong = description.length > maxLength;
 
-    <script>
-        const playlistContainer = document.getElementById("playlist-container");
+    const shortDesc = isLong
+        ? `${description.substring(0, maxLength)}<span class="ler-mais"> Ler mais</span>`
+        : description;
 
-        playlists.forEach((playlist) => {
-            const card = document.createElement("div");
-            card.classList.add("playlist-card");
+    card.innerHTML = `
+        <h3>${playlist.title}</h3>
+        <p class="description-text">${shortDesc}</p>
+        <a href="${playlist.link}" class="play-button" target="_blank" rel="noopener noreferrer">Ouvir Agora</a>
+    `;
 
-            const maxLength = 200;
-            const description = playlist.description || "Sem descrição disponível";
-            const isLong = description.length > maxLength;
+    playlistContainer.appendChild(card);
+});
 
-            const shortDesc = isLong
-                ? `${description.substring(0, maxLength)}<span class="ler-mais"> Ler mais</span>`
-                : description;
+// Ativa o "ler mais/menos"
+playlistContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("ler-mais")) {
+        const span = event.target;
+        const p = span.parentElement;
+        const card = span.closest(".playlist-card");
+        const title = card.querySelector("h3").textContent;
+        const playlist = playlists.find(pl => pl.title === title);
 
-            card.innerHTML = `
-                <h3>${playlist.title}</h3>
-                <p class="description-text">${shortDesc}</p>
-                <a href="${playlist.link}" class="play-button" target="_blank" rel="noopener noreferrer">Ouvir Agora</a>
-            `;
-
-            playlistContainer.appendChild(card);
-        });
-
-        // Manipulador de clique para "Ler mais"/"Ler menos"
-        playlistContainer.addEventListener("click", (event) => {
-            if (event.target.classList.contains("ler-mais")) {
-                const span = event.target;
-                const p = span.parentElement;
-                const card = span.closest(".playlist-card");
-                const title = card.querySelector("h3").textContent;
-                const playlist = playlists.find(pl => pl.title === title);
-
-                if (p.classList.contains("expanded")) {
-                    // Voltar para versão curta
-                    p.innerHTML = playlist.description.substring(0, 200) + '<span class="ler-mais"> Ler mais</span>';
-                    p.classList.remove("expanded");
-                } else {
-                    // Mostrar versão completa
-                    p.innerHTML = playlist.description + '<span class="ler-mais"> Ler menos</span>';
-                    p.classList.add("expanded");
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+        if (p.classList.contains("expanded")) {
+            p.innerHTML = playlist.description.substring(0, 200) + '<span class="ler-mais"> Ler mais</span>';
+            p.classList.remove("expanded");
+        } else {
+            p.innerHTML = playlist.description + '<span class="ler-mais"> Ler menos</span>';
+            p.classList.add("expanded");
+        }
+    }
+});
