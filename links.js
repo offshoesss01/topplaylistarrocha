@@ -7,7 +7,7 @@ const playlists = [
     {
     title: "💔 Arrocha do Sofrimento 🎶",
 	description: "Vai sentir a dor na pele e o ritmo no coração. Só quem tem o coração partido vai entender!", // Descrição da playlist
-    link: "https://open.spotify.com/playlist/4M0cJkUj7sfUx5T9D6XmkB"
+    link: "https://open.spotify.com/playlist/0I28fF5yPDtB4as9bkKBbg"
   },
     {
     title: "🎶 Sofrência do Povão – Só as que machucam o coração 💔🍻",
@@ -161,5 +161,6 @@ const playlists = [
   },
   // Continue a adicionar mais playlists aqui
 ];
+
 
 
