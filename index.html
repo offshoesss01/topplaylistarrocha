@@ -1,47 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trend Music🎶</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playlist do canal M4SONIC</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🔥Top Playlist De Arrocha Do Brasil🎶</h1>
-  <p>Clique e Ouça AGORA!</p>
+    <h1>Playlist do canal M4SONIC</h1>
+    <p>Confira as playlists disponíveis e clique em "Ouvir" para começar a curtir.</p>
 
-  <div class="playlist-container" id="playlist-container"></div>
+    <div class="playlist-container" id="playlistContainer">
+        <!-- Cards de playlist serão inseridos aqui via JavaScript -->
+    </div>
 
-  <script src="links.js"></script>
-  <script>
-    const playlistContainer = document.getElementById("playlist-container");
+    <script src="links.js"></script>
+    <script>
+        const container = document.getElementById('playlistContainer');
 
-    playlists.forEach((playlist) => {
-      const card = document.createElement("div");
-      card.classList.add("playlist-card");
+        function createPlaylistCard(playlist) {
+            const card = document.createElement('div');
+            card.classList.add('playlist-card');
 
-      card.innerHTML = `
-        <h3>${playlist.title}</h3>
-        <div class="playlist-description">
-          <p class="short-text">${playlist.description || "Sem descrição disponível"}</p>
-          <span class="toggle-button">Ler mais...</span>
-        </div>
-        <a href="${playlist.link}" class="play-button" target="_blank">Ouvir Agora</a>
-      `;
+            const title = document.createElement('h3');
+            title.textContent = playlist.nome;
 
-      playlistContainer.appendChild(card);
-    });
+            const shortDesc = document.createElement('p');
+            shortDesc.classList.add('short-text');
+            shortDesc.textContent = playlist.descricao.length > 80
+                ? playlist.descricao.substring(0, 80) + '...'
+                : playlist.descricao;
 
-    // Ativa o botão "Ler mais"
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("toggle-button")) {
-        const desc = e.target.previousElementSibling;
-        desc.classList.toggle("expanded");
-        e.target.textContent = desc.classList.contains("expanded")
-          ? "Ler menos..."
-          : "Ler mais...";
-      }
-    });
-  </script>
+            const longDesc = document.createElement('p');
+            longDesc.classList.add('long-text');
+            longDesc.textContent = playlist.descricao;
+
+            const playButton = document.createElement('a');
+            playButton.classList.add('play-button');
+            playButton.href = playlist.url;
+            playButton.target = '_blank';
+            playButton.rel = 'noopener noreferrer';
+            playButton.textContent = 'Ouvir';
+
+            card.appendChild(title);
+            card.appendChild(shortDesc);
+            card.appendChild(longDesc);
+            card.appendChild(playButton);
+
+            if (playlist.descricao.length > 80) {
+                const toggleButton = document.createElement('button');
+                toggleButton.textContent = 'Ler mais...';
+                toggleButton.classList.add('play-button');
+                toggleButton.style.marginTop = '10px';
+                toggleButton.style.backgroundColor = '#0069d9'; // cor azul para diferenciar
+
+                toggleButton.addEventListener('click', () => {
+                    const isExpanded = longDesc.classList.contains('expanded');
+                    if (isExpanded) {
+                        longDesc.classList.remove('expanded');
+                        toggleButton.textContent = 'Ler mais...';
+                    } else {
+                        longDesc.classList.add('expanded');
+                        toggleButton.textContent = 'Ler menos...';
+                    }
+                });
+
+                card.appendChild(toggleButton);
+            }
+
+            return card;
+        }
+
+        // Carrega as playlists do arquivo links.js (array playlists)
+        playlists.forEach(playlist => {
+            const card = createPlaylistCard(playlist);
+            container.appendChild(card);
+        });
+    </script>
 </body>
 </html>
