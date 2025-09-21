@@ -161,6 +161,7 @@ p.description {
     color: #28a745;
     cursor: pointer;
     text-decoration: underline;
+    font-wqight: bold;
     margin-left: 5px;
 }
 
@@ -175,4 +176,5 @@ p.description {
         margin-top: 80px;
     }
 }
+
 
