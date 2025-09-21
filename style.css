@@ -44,8 +44,8 @@ p.description {
 .playlist-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px; /* Aumentado espaçamento entre cards */
-    padding: 20px;
+    gap: 20px;
+    padding: 10px 20px;
     width: 100%;
     max-width: 1200px;
     margin-top: 20px; /* Espaço abaixo da descrição */
@@ -63,8 +63,7 @@ p.description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Removida altura fixa */
-    min-height: 220px; /* Altura mínima para manter tamanho consistente */
+    height: 260px; /* Altura suficiente para título, descrição, botão e ler mais */
 }
 
 /* Título do card */
@@ -74,17 +73,38 @@ p.description {
     color: #fff;
 }
 
-/* Descrição do card */
+/* Descrição do card com limite inicial de linhas */
 .playlist-card p {
     font-size: 0.9rem;
     color: #bbb;
-    margin: 0 0 20px 0;
-    flex-grow: 1; /* Para ocupar espaço e empurrar botão para baixo */
-    overflow: visible; /* Para evitar corte de texto */
-    text-overflow: unset;
-    display: block; /* Removido clamp para mostrar todo texto */
+    margin: 0 0 10px 0;
+    max-height: 5.4em; /* aproximadamente 4 linhas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita a 4 linhas */
+    -webkit-box-orient: vertical;
+    transition: max-height 0.3s ease;
+}
+
+/* Quando expandido, mostra todo o texto com scroll */
+.playlist-card p.expanded {
+    max-height: 150px; /* altura fixa com rolagem */
+    overflow-y: auto;
     -webkit-line-clamp: unset;
-    -webkit-box-orient: unset;
+}
+
+/* Botão Ler Mais */
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #28a745;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    align-self: center;
+    padding: 0;
 }
 
 /* Botão de ouvir */
@@ -119,12 +139,10 @@ p.description {
     .playlist-container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 10px 15px;
-        gap: 20px;
     }
     
     .playlist-card {
         height: auto; /* Altura flexível em telas pequenas */
-        min-height: auto;
     }
 
     h1 {
